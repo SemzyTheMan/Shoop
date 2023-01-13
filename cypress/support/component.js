@@ -1,3 +1,4 @@
+import '../../styles/globals.css'
 // ***********************************************************
 // This example support/component.js is processed and
 // loaded automatically before your test files.
