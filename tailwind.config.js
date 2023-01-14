@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./layouts/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors: {
@@ -92,6 +93,9 @@ module.exports = {
       },
       white: "#FFFFFF",
       black: "#000000",
+    },
+    backgroundImage: {
+      home: "url(../public/assets/home_hero.png)",
     },
     extend: {
       spacing: {
