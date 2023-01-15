@@ -72,7 +72,7 @@ export const Input = ({
       classes += "";
       return (
         <select className={[classes, className].join(" ")}>
-          <option selected={true}></option>
+          <option selected={true}>{placeholder}</option>
           {options &&
             options.map((option, index) => (
               <option

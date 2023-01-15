@@ -1,0 +1,31 @@
+.gridContainer {
+    grid-template-columns: 240px 1fr 360px;
+    grid-template-rows: 88px 1fr 50px;
+    grid-template-areas: 'aside header article' 'aside main article' 'aside footer article';
+    height: calc(100vh -  120px)
+}
+
+.header {
+    grid-area: header;
+    @apply px-4 flex flex-row justify-between py-5
+}
+
+.aside {
+    grid-area: aside;
+    @apply border-r border-teal-100 bg-[#F9FBFF]
+}
+
+.article {
+    grid-area: article;
+    @apply bg-[#F9FBFF]
+}
+
+.main {
+    grid-area: main;
+    @apply bg-[#F6F9FF]
+}
+
+.footer {
+    grid-area: footer;
+    @apply bg-[#F6F9FF]
+}
