@@ -1,10 +1,10 @@
 import { Logo } from "../components/Logo/logo";
-import { Button } from "../components/Buttons/button";
+import { Login } from "../components/Buttons/button";
 
 const Header = () => (
   <div className={"flex flex-row justify-between items-center px-10 py-4"}>
     <Logo />
-    <Button text={"Log in"} />
+    <Login />
   </div>
 );
 
