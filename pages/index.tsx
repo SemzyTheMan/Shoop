@@ -1,4 +1,4 @@
-import { Button } from "../components/Buttons/button";
+import { AltLogin, Button } from "../components/Buttons/button";
 
 export default function Home() {
   return (
@@ -17,11 +17,11 @@ export default function Home() {
       </div>
       <div className={"flex flex-row justify-center py-16 text-center"}>
         <div>
-          <h3 className={"text-2xl"}>Are you one of our cashiers?</h3>
-          <h5 className={"text-lg text-[#667085]"}>
+          <h3 className={"text-2xl mb-2"}>Are you one of our cashiers?</h3>
+          <h5 className={"text-lg text-[#667085] mb-4"}>
             Please log in to access your account
           </h5>
-          <Button text={"Log in"} />
+          <AltLogin />
         </div>
       </div>
     </>

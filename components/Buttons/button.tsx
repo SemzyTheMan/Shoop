@@ -17,6 +17,20 @@ export const Button = ({ text, onClick, className }: ButtonProps) => (
   </>
 );
 
+export const AltButton = ({ text, onClick, className }: ButtonProps) => (
+  <>
+    <button
+      className={[
+        className ? className : "",
+        "bg-white text-blue-500 border border-blue-500 px-4.5 py-3",
+      ].join(" ")}
+      onClick={onClick}
+    >
+      {text}
+    </button>
+  </>
+);
+
 interface IButtonProps extends ButtonProps {
   icon: JSX.Element;
 }
@@ -33,4 +47,11 @@ export const IButton = ({ text, onClick, icon, className }: IButtonProps) => (
       <span>{text}</span>
     </button>
   </>
+);
+
+export const Login = ({ className }: { className?: string }) => (
+  <Button className={className ? className : ""} text={"Login"} />
+);
+export const AltLogin = ({ className }: { className?: string }) => (
+  <AltButton className={className ? className : ""} text={"Login"} />
 );

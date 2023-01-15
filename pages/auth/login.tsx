@@ -1,6 +1,6 @@
 import { FormGroup } from "../../components/Forms/FormGroup/Formgroup";
 import Link from "next/link";
-import { Button } from "../../components/Buttons/button";
+import { Login as LButton } from "../../components/Buttons/button";
 
 const Login = () => {
   return (
@@ -36,7 +36,7 @@ const Login = () => {
                 Forgot Password
               </Link>
             </div>
-            <Button text={"Log in"} className={"w-full rounded-lg"} />
+            <LButton className={"w-full rounded-lg"} />
           </form>
         </div>
         <div className={"flex flex-row gap-1 justify-center text-sm"}>
