@@ -4,7 +4,11 @@ import { Button } from "../../components/Buttons/button";
 
 const Login = () => {
   return (
-    <div className={"max-w-[504px] block mx-auto bg-[EDF2FC]"}>
+    <div
+      className={
+        "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      }
+    >
       <div
         className={
           "bg-white px-16 py-10 w-full text-center border rounded shadow"
