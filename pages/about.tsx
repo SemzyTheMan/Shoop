@@ -1,9 +1,30 @@
 import Head from "next/head";
 import { Logo } from "../components/Logo/logo";
-import { Input } from "../components/Forms/Input/Input";
 import React from "react";
 import { FormGroup } from "../components/Forms/FormGroup/Formgroup";
+import { DCol, Table } from "../components/Table/Table";
+import { IButton } from "../components/Buttons/button";
 export default function About() {
+  const testColumns: DCol[] = [
+    { header: "Test 1", valueField: "id" },
+    { header: "Test 2", valueField: "u" },
+    { header: "Test 3", valueField: "v" },
+    { header: "Test 4", valueField: "d" },
+    { header: "Test 5", valueField: "id" },
+    { header: "Test 6", valueField: "u" },
+    {
+      header: "Test 7",
+      valueField: "v",
+      type: "icon",
+      icon: <IButton icon={<i>+</i>} text={"Add to Slip"} />,
+    },
+  ];
+  const data = [
+    { id: 1, v: "Test", u: "Test of his mettle", d: "Jan - 1" },
+    { id: 2, v: "Test", u: "English premier league", d: "Jan - 1" },
+    { id: 3, v: "Test", u: "Test of his mettle", d: "Jan - 1" },
+    { id: 4, v: "Test", u: "French lIGUE 1", d: "Jan - 1" },
+  ];
   return (
     <>
       <Head>
@@ -20,7 +41,7 @@ export default function About() {
           placeholder={"Enter your text"}
           label={"Sample"}
         />
-        <Input type={"select"} options={["hi", "there"]} />
+        <Table columns={testColumns} data={data} />
       </main>
     </>
   );
