@@ -84,7 +84,7 @@ export const DashboardLayout = ({
           )}
         </header>
         <aside className={styles.aside}></aside>
-        <main className={styles.main}>
+        <div className={styles.main}>
           <div className={"flex flex-row px-4 bg-[#E5EAF4]"}>
             {filters?.length &&
               filters?.map(({ filter, active }, index) => (
@@ -97,9 +97,9 @@ export const DashboardLayout = ({
               ))}
           </div>
           {children}
-        </main>
+        </div>
         <article className={styles.article}>{article}</article>
-        <footer className={styles.footer}>Footer</footer>
+        <footer className={styles.footer}></footer>
       </div>
     </>
   );
