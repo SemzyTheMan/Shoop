@@ -66,10 +66,10 @@ export const Input = ({
   placeholder,
 }: InputProps | SelectProps) => {
   let classes =
-    "border border-gray-100 ring-0 outline-none leading-5 px-3.5 py-2.5";
+    "border rounded-sm border-gray-100 ring-0 outline-none leading-5 px-3.5 py-2.5";
   switch (type) {
     case "select":
-      classes += "";
+      classes += " pr-4";
       return (
         <select className={[classes, className].join(" ")} defaultValue={""}>
           <option>{placeholder}</option>
