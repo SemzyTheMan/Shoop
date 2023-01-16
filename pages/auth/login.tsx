@@ -14,9 +14,11 @@ const Login = () => {
           "bg-white px-16 py-10 w-full text-center border rounded shadow"
         }
       >
-        <h1 className={"block text-3xl"}>Login to your account</h1>
+        <h1 className={"font-semibold block text-4xl"}>
+          Log in to your account
+        </h1>
         <span className={"text-base text-teal-700"}>
-          Please enter your details
+          Welcome back! Please enter your details.
         </span>
         <div className={"my-8 text-start"}>
           <form>

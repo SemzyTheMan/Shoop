@@ -8,7 +8,7 @@ export const Button = ({ text, onClick, className }: ButtonProps) => (
     <button
       className={[
         className ? className : "",
-        "bg-blue-500 text-white px-4.5 py-3",
+        "bg-blue-500 text-white px-4.5 py-3 rounded-sm",
       ].join(" ")}
       onClick={onClick}
     >
@@ -22,7 +22,7 @@ export const AltButton = ({ text, onClick, className }: ButtonProps) => (
     <button
       className={[
         className ? className : "",
-        "bg-white text-blue-500 border border-blue-500 px-4.5 py-3",
+        "bg-transparent text-blue-500 border border-blue-500 px-4.5 py-3 rounded-sm",
       ].join(" ")}
       onClick={onClick}
     >
@@ -39,7 +39,7 @@ export const IButton = ({ text, onClick, icon, className }: IButtonProps) => (
     <button
       className={[
         className ? className : "",
-        "flex flex-row gap-1 bg-blue-500 text-white px-4.5 py-3",
+        "flex flex-row gap-1 bg-blue-500 text-white px-4.5 py-3 rounded-sm",
       ].join(" ")}
       onClick={onClick}
     >

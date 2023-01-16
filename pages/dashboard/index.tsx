@@ -40,14 +40,6 @@ const Dashboard = () => {
       </div>
     </div>
   );
-  console.log(
-    Array(13)
-      .fill(5)
-      .map((_, idx) => idx + 1)
-      .map((i) => {
-        return { id: i, ...data[0] };
-      })
-  );
   const p = { name: "Busayo" };
   return (
     <DashboardLayout

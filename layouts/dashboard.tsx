@@ -17,9 +17,9 @@ interface URL {
   path: string;
 }
 const urls: URL[] = [
-  { label: "Home", path: "/dashboard" },
-  { label: "About", path: "/dashboard" },
-  { label: "Other", path: "/dashboard" },
+  { label: "My Bets", path: "/dashboard" },
+  { label: "Transactions", path: "/dashboard" },
+  { label: "Support", path: "/dashboard" },
 ];
 
 const NavItem = ({ label, path }: URL) => (
