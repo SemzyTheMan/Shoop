@@ -5,6 +5,7 @@ interface LayoutProps {
   children?: JSX.Element | JSX.Element[];
   filters?: { filter: string; active: boolean }[];
   action?: (filter: string) => void;
+  article?: JSX.Element | JSX.Element[];
   header: {
     title: string;
     subtitle?: string;
@@ -61,6 +62,7 @@ export const DashboardLayout = ({
   filters,
   action,
   header,
+  article,
 }: LayoutProps) => {
   return (
     <>
@@ -83,7 +85,7 @@ export const DashboardLayout = ({
         </header>
         <aside className={styles.aside}></aside>
         <main className={styles.main}>
-          <div className={"flex flex-row px-4 bg-[#EDF2FC]"}>
+          <div className={"flex flex-row px-4 bg-[#E5EAF4]"}>
             {filters?.length &&
               filters?.map(({ filter, active }, index) => (
                 <FilterComp
@@ -96,7 +98,7 @@ export const DashboardLayout = ({
           </div>
           {children}
         </main>
-        <article className={styles.article}>Article</article>
+        <article className={styles.article}>{article}</article>
         <footer className={styles.footer}>Footer</footer>
       </div>
     </>

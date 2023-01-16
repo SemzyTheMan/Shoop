@@ -1,7 +1,19 @@
 import { DashboardLayout } from "../../layouts/dashboard";
 import { Input } from "../../components/Forms/Input/Input";
+import { Slip } from "../../components/Slip/slip";
+import { SlipStatus } from "../../components/Slip/status";
 const filters = [{ filter: "Fixtures", active: true }];
 const Dashboard = () => {
+  const Article = () => (
+    <div>
+      <div className={"mb-6"}>
+        <Slip slips={[]} />
+      </div>
+      <div className={"mt-6"}>
+        <SlipStatus />
+      </div>
+    </div>
+  );
   const p = { name: "Busayo" };
   return (
     <DashboardLayout
@@ -11,6 +23,7 @@ const Dashboard = () => {
         subtitle: "Continue managing your dashboard",
         wallet: 1000,
       }}
+      article={<Article />}
     >
       <div className={"flex flex-row border-b border-teal-50 gap-6 py-4 px-4"}>
         <Input
