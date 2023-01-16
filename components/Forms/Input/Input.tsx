@@ -71,8 +71,8 @@ export const Input = ({
     case "select":
       classes += "";
       return (
-        <select className={[classes, className].join(" ")}>
-          <option selected={true}>{placeholder}</option>
+        <select className={[classes, className].join(" ")} defaultValue={""}>
+          <option>{placeholder}</option>
           {options &&
             options.map((option, index) => (
               <option
