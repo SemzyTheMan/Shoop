@@ -111,7 +111,7 @@ module.exports = {
         h4: ["16px", "22px"],
         h5: ["16px", "18px"],
         h6: ["14px", "18px"],
-        lg: ["16px", "22px"],
+        lg: ["18px", "24px"],
         md: ["14px", "20px"],
         sm: ["12px", "16px"],
         xs: ["12px", "16px"],

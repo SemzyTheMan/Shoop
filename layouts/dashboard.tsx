@@ -45,8 +45,8 @@ const FilterComp = ({
   active: boolean;
 }) => (
   <div
-    className={`min-w-[58px] py-2 border-b border-blue-500 cursor-pointer ${
-      active ? "text-blue-500" : "text-grey-300"
+    className={`min-w-[60px] py-2 border-blue-500 cursor-pointer text-center ${
+      active ? "text-blue-500 border-b" : "text-grey-300"
     }`}
     onClick={() => action(filter)}
   >
@@ -85,7 +85,7 @@ export const DashboardLayout = ({
         </header>
         <aside className={styles.aside}></aside>
         <div className={styles.main}>
-          <div className={"flex flex-row px-4 bg-[#E5EAF4]"}>
+          <div className={"flex flex-row px-4 bg-[#E5EAF4] gap-2"}>
             {filters?.length &&
               filters?.map(({ filter, active }, index) => (
                 <FilterComp
