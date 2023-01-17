@@ -17,8 +17,8 @@ interface URL {
   path: string;
 }
 const urls: URL[] = [
-  { label: "My Bets", path: "/dashboard" },
-  { label: "Transactions", path: "/dashboard" },
+  { label: "My Bets", path: "/dashboard/bets" },
+  { label: "Transactions", path: "/dashboard/transactions" },
   { label: "Support", path: "/dashboard" },
 ];
 
