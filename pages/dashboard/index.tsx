@@ -51,7 +51,7 @@ const Dashboard = () => {
       }}
       article={<Article />}
     >
-      <div>
+      <div className={"pb-24"}>
         <div
           className={"flex flex-row border-b border-teal-50 gap-6 py-4 px-4"}
         >
