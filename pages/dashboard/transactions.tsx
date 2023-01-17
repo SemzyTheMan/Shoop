@@ -1,6 +1,6 @@
 import { DCol, Table } from "../../components/Table/Table";
 import React from "react";
-import { Slip, SlipDownload } from "../../components/Slip/slip";
+import { SlipDownload } from "../../components/Slip/slip";
 import { Input } from "../../components/Forms/Input/Input";
 import { DashboardLayout } from "../../layouts/dashboard";
 
@@ -58,7 +58,7 @@ const Transactions = () => {
   const Article = () => (
     <div>
       <div className={"mb-6"}>
-        <SlipDownload slip={null as unknown as Slip} />
+        <SlipDownload slips={[]} />
       </div>
     </div>
   );
