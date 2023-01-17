@@ -96,7 +96,11 @@ export const DashboardLayout = ({
                 />
               ))}
           </div>
-          {children}
+          <div
+            className={"overflow-y-auto min-h-full max-h-[calc(100%_+_50px)]"}
+          >
+            {children}
+          </div>
         </div>
         <article className={styles.article}>{article}</article>
         <footer className={styles.footer}></footer>

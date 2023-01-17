@@ -1,8 +1,9 @@
 .gridContainer {
     grid-template-columns: 240px 1fr 360px;
-    grid-template-rows: 88px 1fr 50px;
-    grid-template-areas: 'aside header article' 'aside main article' 'aside footer article';
-    height: calc(100vh -  120px)
+    grid-template-rows: 88px 1fr;
+    grid-template-areas: 'aside header article' 'aside main article';
+    height: calc(100vh -  120px);
+    max-height: calc(100vh -  120px)
 }
 
 .header {
@@ -22,7 +23,9 @@
 
 .main {
     grid-area: main;
-    @apply bg-[#F6F9FF]
+    height: calc(100vh -  120px);
+    max-height: calc(100vh -  120px - 140px);
+    @apply bg-[#F6F9FF] overflow-y-hidden;
 }
 
 .footer {
