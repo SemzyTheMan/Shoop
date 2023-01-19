@@ -19,7 +19,7 @@ You can check out [the deployment URL](https://shopaholic-frontend.vercel.app) -
 
 ## Tests
 
-To run tests 
+To run test
 ```bash
 yarn cypress
 #or
