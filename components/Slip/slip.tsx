@@ -14,6 +14,7 @@ export const Slip = ({ slips }: SlipProps) => {
         type={"select"}
         options={[{ code: "Game Type", description: "NAP3" }]}
         labelType={"cd"}
+        className={"text-[#2C55A2] font-bold bg-[#F0F5FF]"}
         placeholder={"GameType - None"}
       />
     </div>
@@ -23,16 +24,17 @@ export const Slip = ({ slips }: SlipProps) => {
     <Card header={<Header />}>
       <>
         <div className={"flex flex-row justify-between"}>
-          <span>
-            Your selections <span>0</span>
+          <span className="text-[#666B75] font-medium">
+            Your selections{" "}
+            <span className="text-white px-2 py-1 rounded bg-[#2C55A2]">0</span>
           </span>
-          <span>Odds</span>
+          <span className="text-[#666B75] font-medium">Odds</span>
         </div>
         <div className={"bg-[#F3F7FF] px-2.5 py-2.5 mt-4 mb-7 text-center"}>
           {!!(slips && slips.length) &&
             slips.map((_, i) => <div key={i}>Slip</div>)}
           {!(slips && slips.length) && (
-            <span>
+            <span className="text-[#606163] [word-spacing:-1px]">
               Your bet slip is currently empty. Start betting now to get
               started.
             </span>
@@ -60,8 +62,8 @@ export const SlipDetails = ({ slip }: { slip: Slip }) => {
           {!!slip && <div>Slip</div>}
           {!slip && (
             <span>
-              You would see the details of the bet you have selected here. Begin
-              by clicking on preview from the menu.
+              Begin by clicking on preview from the menu to see details of the
+              bet you have selected.
             </span>
           )}
         </div>
@@ -79,7 +81,7 @@ export const SlipDownload = ({}: SlipProps) => {
         </div>
         <div className={"px-2.5 py-2.5 my-3 flex flex-row justify-between"}>
           <Input type={"date"} />
-          <Input type={"select"} options={[]} />
+          <Input type={"select"} placeholder={"Type"} options={[]} />
         </div>
         <div className={"w-full"}>
           <Button text={"Download now"} className={"w-full"} />

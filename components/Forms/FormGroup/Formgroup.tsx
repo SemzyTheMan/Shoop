@@ -1,6 +1,7 @@
 import styles from "./FormGroup.module.css";
 import { InputProps, SelectProps, Input } from "../Input/Input";
 import { Email } from "../Input/email";
+import { useState } from "react";
 
 interface FormGroupProps extends InputProps {
   label: string;
@@ -23,6 +24,7 @@ export const FormGroup = ({
   className,
   placeholder,
 }: FormGroupProps | FormGroupSelectProps | FormGroupEmailProps) => {
+  const [password, showPassword] = useState(false);
   switch (type) {
     case "select":
       return (
@@ -72,11 +74,21 @@ export const FormGroup = ({
       return (
         <div className={[className ? className : "", "block w-full"].join(" ")}>
           <label className={styles.label}>{label}</label>
-          <Input
-            className={["", "block w-full"].join(" ")}
-            type={type}
-            placeholder={placeholder}
-          />
+          <div className="relative flex flex-row items-center">
+            <img
+              className="absolute right-1"
+              src={`/assets/${password ? "open-eye" : "close-eye"}.svg`}
+              onClick={() => {
+                showPassword(!password);
+              }}
+              alt="close"
+            />
+            <Input
+              className={["", "block w-full"].join(" ")}
+              type={password===false ? type : "text"}
+              placeholder={placeholder}
+            />
+          </div>
         </div>
       );
   }

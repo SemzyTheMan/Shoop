@@ -22,36 +22,50 @@ const Transactions = () => {
     {
       valueField: "v",
       type: "icon",
-      icon: <span>:</span>,
+      icon: <img src="/assets/icon.svg" alt=":" />,
     },
   ];
+  interface AmountProps {
+    amount: any;
+    icon: any;
+  }
+  const Amount = ({ amount, icon }: AmountProps) => (
+    <div className="flex flex-row justify-center">
+      <p className="flex items-center">
+        {amount}{" "}
+        <span className="ml-1">
+          <img src={icon} alt="down" />
+        </span>
+      </p>
+    </div>
+  );
   const data = [
     {
       time: "11-01-23; 12:04",
       type: "Staked Bets",
       transactionID: "2123000390ADN12",
-      amount: "-2000.00",
+      amount: <Amount amount={"2000"} icon={"/assets/arrow-up.svg"}></Amount>,
       balance: "1,000.00",
     },
     {
       time: "11-01-23; 12:04",
       type: "Deposits",
       transactionID: "22456000390FS12",
-      amount: "+3000.00",
+      amount: <Amount amount={"3000"} icon={"/assets/arrow-down.svg"}></Amount>,
       balance: "4,000.00",
     },
     {
       time: "11-01-23; 12:04",
       type: "Refunds",
       transactionID: "214412760TJO121",
-      amount: "0.78",
+      amount: <Amount amount={"0.78"} icon={"/assets/arrow-down.svg"}></Amount>,
       balance: "4,000.78",
     },
     {
       time: "11-01-23; 12:04",
       type: "Winnings",
       transactionID: "203000390TJO121",
-      amount: "+30000.00",
+      amount: <Amount amount={"30000"} icon={"/assets/arrow-down.svg"}></Amount>,
       balance: "34,000.78",
     },
   ];
@@ -75,19 +89,28 @@ const Transactions = () => {
     >
       <div>
         <div
-          className={"flex flex-row border-b border-teal-50 gap-6 py-4 px-4"}
+          className={
+            "flex flex-row border-b bg-[#F7F9F] border-teal-50 gap-6 py-4 px-4"
+          }
         >
           <Input
             type={"date"}
-            className={"rounded min-w-[100px]"}
+            className={"rounded min-w-[200px]"}
             placeholder={"Date Range"}
           />
           {/*TODO: Add search icon to input*/}
-          <Input
-            type={"search"}
-            placeholder={"Search for ticket id"}
-            className={"rounded min-w-[200px]"}
-          />
+          <div className={"flex flex-row items-center bg-white relative"}>
+            <span className={"absolute mr-5 ml-2  "}>
+              <img src="/assets/share.svg" alt="search" />
+            </span>
+            <input
+              type="text"
+              className={
+                "rounded pl-7 border-gray-100 outline-gray-100 min-w-[250px]  py-2.5 "
+              }
+              placeholder={`Search for ticket id`}
+            />
+          </div>
         </div>
         <div>
           <Table

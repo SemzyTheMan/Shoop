@@ -14,7 +14,7 @@ const Login = () => {
           "bg-white px-16 py-10 w-full text-center border rounded shadow"
         }
       >
-        <h1 className={"font-semibold block text-4xl"}>
+        <h1 className={"font-semibold block text-4xl mb-2.5"}>
           Log in to your account
         </h1>
         <span className={"text-base text-teal-700"}>
@@ -27,6 +27,7 @@ const Login = () => {
               label={"Password"}
               type={"password"}
               className={"my-4"}
+              placeholder={"Enter your password"}
             />
             <div
               className={
@@ -41,8 +42,10 @@ const Login = () => {
             <LButton className={"w-full rounded-lg"} />
           </form>
         </div>
-        <div className={"flex flex-row gap-1 justify-center text-sm"}>
-          <span>Don{"'"}t have an account?</span>
+        <div
+          className={"flex flex-row gap-1 justify-center text-sm font-medium"}
+        >
+          <span className="text-[#667085]">Don{"'"}t have an account?</span>
           <Link href={"/"} className={"text-blue-400"}>
             Reach out to an agent
           </Link>

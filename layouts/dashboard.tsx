@@ -1,6 +1,8 @@
 import styles from "./Dashboard.module.css";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/router";
+
 interface LayoutProps {
   children?: JSX.Element | JSX.Element[];
   filters?: { filter: string; active: boolean }[];
@@ -15,23 +17,76 @@ interface LayoutProps {
 interface URL {
   label: string;
   path: string;
+  activeCheck: any;
 }
+
 const urls: URL[] = [
-  { label: "My Bets", path: "/dashboard/bets" },
-  { label: "Transactions", path: "/dashboard/transactions" },
-  { label: "Support", path: "/dashboard" },
+  {
+    label: "My Bets",
+    path: "/dashboard/bets",
+    activeCheck: (path: string) => {
+      const router = useRouter();
+      let active = false;
+      if (router.route.includes(path)) {
+        active = true;
+      } else {
+        active = false;
+      }
+      return active;
+    },
+  },
+  {
+    label: "Transactions",
+    path: "/dashboard/transactions",
+    activeCheck: (path: string) => {
+      const router = useRouter();
+      let active = false;
+      if (router.route.includes(path)) {
+        active = true;
+      } else {
+        active = false;
+      }
+      return active;
+    },
+  },
+  {
+    label: "Support",
+    path: "/dashboard/support",
+    activeCheck: (path: string) => {
+      const router = useRouter();
+      let active = false;
+      if (router.route.includes(path)) {
+        active = true;
+      } else {
+        active = false;
+      }
+      return active;
+    },
+  },
 ];
 
-const NavItem = ({ label, path }: URL) => (
-  <div className={"text-teal-100"}>
+const NavItem = ({ label, path, activeCheck }: URL) => (
+  <div
+    className={`text-teal-100 ${
+      activeCheck(path) === true ? `font-bold` : null
+    }`}
+  >
     <Link href={path}>{label}</Link>
   </div>
 );
 const Header = () => (
-  <nav className={"flex flex-row py-2 px-11 bg-blue-500 gap-4"}>
-    {urls.map(({ label, path }, index) => (
-      <NavItem key={index} label={label} path={path} />
-    ))}
+  <nav className={"flex flex-row  bg-blue-500 gap-4 justify-between"}>
+    <div className={"flex flex-row py-2 px-11 gap-4"}>
+      {urls.map(({ label, path,activeCheck }, index) => (
+        <NavItem activeCheck={activeCheck} key={index} label={label} path={path} />
+      ))}
+    </div>
+    <div className={"flex flex-row py-2 px-11 gap-4 mr-8"}>
+      <img src="/assets/facebook.svg" alt="facebook" />
+      <img src="/assets/instagram.svg" alt="icon" />
+      <img src="/assets/twitter.svg" alt="twitter" />
+      <img src="/assets/youtube.svg" alt="youtube" />
+    </div>
   </nav>
 );
 
@@ -45,7 +100,7 @@ const FilterComp = ({
   active: boolean;
 }) => (
   <div
-    className={`min-w-[60px] py-2 border-blue-500 cursor-pointer text-center ${
+    className={`min-w-[60px] py-2 mr-5 border-blue-500 cursor-pointer text-center ${
       active ? "text-blue-500 border-b" : "text-grey-300"
     }`}
     onClick={() => action(filter)}
@@ -85,7 +140,7 @@ export const DashboardLayout = ({
         </header>
         <aside className={styles.aside}></aside>
         <div className={styles.main}>
-          <div className={"flex flex-row px-4 bg-[#E5EAF4] gap-2"}>
+          <div className={"flex flex-row px-4  bg-[#F7F9FF] gap-2"}>
             {filters?.length &&
               filters?.map(({ filter, active }, index) => (
                 <FilterComp

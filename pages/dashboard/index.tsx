@@ -18,7 +18,7 @@ const Dashboard = () => {
       header: "Action",
       valueField: "v",
       type: "icon",
-      icon: <IButton icon={<i>+</i>} text={"Add to Slip"} />,
+      icon: <IButton icon={<i>+</i>} text={"Add to betslip"} />,
     },
   ];
   const data = [
@@ -58,7 +58,7 @@ const Dashboard = () => {
           <Input
             type={"select"}
             options={["NAP3"]}
-            className={"rounded min-w-[100px]"}
+            className="rounded text-yellow  min-w-[100px]"
             placeholder={"Game type"}
           />
           <Input

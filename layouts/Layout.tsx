@@ -1,16 +1,20 @@
 import { Logo } from "../components/Logo/logo";
 import { Login } from "../components/Buttons/button";
+import { useRouter } from "next/router";
 
-const Header = () => (
-  <div
-    className={
-      "flex flex-row justify-between items-center px-10 py-3 bg-[#EDF2FC] "
-    }
-  >
-    <Logo />
-    <Login />
-  </div>
-);
+const Header = () => {
+  const router = useRouter();
+  return (
+    <div
+      className={`flex flex-row ${
+        router.route.includes("login") ? "justify-center" : "justify-between"
+      } items-center px-10 py-3 bg-[#EDF2FC] `}
+    >
+      <Logo />
+      <Login />
+    </div>
+  );
+};
 
 interface LayoutProps {
   children?: JSX.Element | JSX.Element[];

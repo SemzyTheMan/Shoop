@@ -6,11 +6,13 @@ export interface InputProps {
   valueField?: null;
   labelField?: null;
   labelType?: null;
+  onfocus?: any;
 }
 export interface SelectProps {
   type: "select";
   className?: string;
   placeholder?: string;
+  onfocus?: any;
   options: any[];
   valueField?: string;
   labelField?: string;
@@ -60,6 +62,7 @@ export const Input = ({
   type = "text",
   options,
   valueField,
+  onfocus,
   labelType,
   labelField,
   className,
@@ -95,6 +98,7 @@ export const Input = ({
           placeholder={placeholder}
           type={type}
           className={[classes, className].join(" ")}
+          onFocus={onfocus}
         />
       );
   }

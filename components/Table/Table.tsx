@@ -18,7 +18,9 @@ export const Table = ({ columns, data }: TableProps) => {
       <div className={"overflow-x-auto"}>
         <table className={"min-w-full max-w-full"}>
           <thead
-            className={"w-full px-4 py-3 text-teal-900 font-semibold px-2"}
+            className={
+              "w-full bg-[#F6F9FF] px-4 py-3 text-teal-900 font-semibold px-2"
+            }
           >
             <tr>
               {columns.length &&
@@ -61,7 +63,15 @@ export const Table = ({ columns, data }: TableProps) => {
         }
       >
         <div>Previous</div>
-        <div>1 2 3 4 5</div>
+        <div className={"flex flex-row px-2"}>
+          <p className={"px-3"}>1</p>
+          <p className={"px-3"}>2</p>
+          <p className={"px-3"}>3</p>
+          <p className={"px-3"}>...</p>
+          <p className={"px-3"}>8</p>
+          <p className={"px-3"}>9</p>
+          <p className={"px-3"}>10</p>
+        </div>
         <div>Next</div>
       </div>
     </div>

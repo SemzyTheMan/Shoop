@@ -21,7 +21,7 @@ const Bets = () => {
     {
       valueField: "v",
       type: "icon",
-      icon: <span>:</span>,
+      icon: <img src="/assets/icon.svg" alt=":" />,
     },
   ];
   const data = [
@@ -40,6 +40,24 @@ const Bets = () => {
       </div>
     </div>
   );
+  const Won = () => (
+    <div className="bg-[#ECFDF3] flex flex-row py-2 items-center justify-center">
+      <div className={"w-2 h-2 bg-[#11B067] mr-3"}></div>
+      <p className={"text-[#027A48]"}> Won</p>
+    </div>
+  );
+  const Lost = () => (
+    <div className="bg-[#FFF2F2] flex flex-row py-2 items-center justify-center">
+      <div className={"w-2 h-2 bg-[#DD1818] mr-3"}></div>
+      <p className={"text-[#B10808]"}> Lost</p>
+    </div>
+  );
+  const Running = () => (
+    <div className="bg-[#FFFFED] flex flex-row items-center py-2 justify-center">
+      <div className={"w-2 h-2 bg-[#E7DF24] mr-3"}></div>
+      <p className={"text-[#9F9909]"}> Running</p>
+    </div>
+  );
   return (
     <DashboardLayout
       filters={filters}
@@ -55,15 +73,23 @@ const Bets = () => {
         >
           <Input
             type={"date"}
-            className={"rounded min-w-[100px]"}
+            className={"rounded min-w-[200px]"}
             placeholder={"Date Range"}
           />
           {/*TODO: Add search icon to input*/}
-          <Input
-            type={"search"}
-            placeholder={"Search for ticket id"}
-            className={"rounded min-w-[200px]"}
-          />
+
+          <div className={"flex flex-row items-center bg-white"}>
+            <span className={"absolute mr-5 ml-2  "}>
+              <img src="/assets/share.svg" alt="search" />
+            </span>
+            <input
+              type="text"
+              className={
+                "rounded pl-7 border-gray-100 outline-gray-100 min-w-[250px]  py-2.5 "
+              }
+              placeholder={`Search for ticket id`}
+            />
+          </div>
         </div>
         <div>
           <Table
@@ -74,7 +100,14 @@ const Bets = () => {
               .map((i) => {
                 return {
                   ...data[0],
-                  status: i % 3 ? "Won" : i % 2 ? "Lost" : "Running",
+                  status:
+                    i % 3 ? (
+                      <Won></Won>
+                    ) : i % 2 ? (
+                      <Lost></Lost>
+                    ) : (
+                      <Running></Running>
+                    ),
                 };
               })}
           />
