@@ -59,6 +59,14 @@ export const Login = ({ className }: { className?: string }) => {
     </div>
   );
 };
+export const Login2 = ({ className }: { className?: string }) => {
+ 
+  return (
+    <div>
+      <Button className={className ? className : ""} text={"Login"} />
+    </div>
+  );
+};
 export const AltLogin = ({ className }: { className?: string }) => (
   <AltButton className={className ? className : ""} text={"Login"} />
 );

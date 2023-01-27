@@ -22,7 +22,7 @@ const Transactions = () => {
     {
       valueField: "v",
       type: "icon",
-      icon: <img src="/assets/icon.svg" alt=":" />,
+      icon: <img src="/assets/Icon.svg" alt="" />,
     },
   ];
   interface AmountProps {
@@ -65,7 +65,9 @@ const Transactions = () => {
       time: "11-01-23; 12:04",
       type: "Winnings",
       transactionID: "203000390TJO121",
-      amount: <Amount amount={"30000"} icon={"/assets/arrow-down.svg"}></Amount>,
+      amount: (
+        <Amount amount={"30000"} icon={"/assets/arrow-down.svg"}></Amount>
+      ),
       balance: "34,000.78",
     },
   ];

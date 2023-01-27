@@ -1,6 +1,6 @@
 import { FormGroup } from "../../components/Forms/FormGroup/Formgroup";
 import Link from "next/link";
-import { Login as LButton } from "../../components/Buttons/button";
+import { Login2 as LButton } from "../../components/Buttons/button";
 
 const Login = () => {
   return (
